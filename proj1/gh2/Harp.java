@@ -12,7 +12,11 @@ public class Harp {
     private static final double DECAY = .996; // energy decay factor
 
     /* Buffer for storing sound data. */
+<<<<<<< HEAD
     private Deque<Double> buffer;
+=======
+    private ArrayDeque<Double> buffer;
+>>>>>>> 2b30605667040f17551f381bead327cc6d4557ee
 
     /* Create a guitar string of the given frequency.  */
     public Harp(double frequency) {
