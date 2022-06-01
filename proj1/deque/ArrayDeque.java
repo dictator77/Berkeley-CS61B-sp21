@@ -100,20 +100,20 @@ public class ArrayDeque<T> implements Deque<T> {
 //        return null;
 //    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof ArrayDeque) {
-            if (size() != ((ArrayDeque<T>) o).size()) {
-                return false;
-            }
-            for (int i = 0; i < size; i++) {
-                if (((ArrayDeque<?>) o).get(i) != get(i)) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o instanceof ArrayDeque) {
+//            if (size() != ((ArrayDeque<T>) o).size()) {
+//                return false;
+//            }
+//            for (int i = 0; i < size; i++) {
+//                if (((ArrayDeque<?>) o).get(i) != get(i)) {
+//                    return false;
+//                }
+//            }
+//            return true;
+//        }
+//        return false;
+//    }
 
 }

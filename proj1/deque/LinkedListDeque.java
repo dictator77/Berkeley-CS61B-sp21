@@ -108,24 +108,24 @@ public class LinkedListDeque<T> implements Deque<T> {
 //
 //    }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof LinkedListDeque) {
-            if (size() != ((LinkedListDeque<T>) o).size()) {
-                return false;
-            }
-            StuffNode p = this.sentinel.next;
-            StuffNode q = ((LinkedListDeque<T>) o).sentinel.next;
-            while (p != sentinel) {
-                if (p.item != q.item) {
-                    return false;
-                }
-                p = p.next;
-                q = q.next;
-            }
-            return true;
-        }
-        return false;
-    }
+//    @Override
+//    public boolean equals(Object o) {
+//        if (o instanceof LinkedListDeque) {
+//            if (size() != ((LinkedListDeque<T>) o).size()) {
+//                return false;
+//            }
+//            StuffNode p = this.sentinel.next;
+//            StuffNode q = ((LinkedListDeque<T>) o).sentinel.next;
+//            while (p != sentinel) {
+//                if (p.item != q.item) {
+//                    return false;
+//                }
+//                p = p.next;
+//                q = q.next;
+//            }
+//            return true;
+//        }
+//        return false;
+//    }
 
 }

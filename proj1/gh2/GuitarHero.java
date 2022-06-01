@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdDraw;
 
 public class GuitarHero {
     public static final double CONCERT_A = 440.0;
-    public String keyboard = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
+    private String keyboard = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
 
     public static void main(String[] args) {
         /* create two guitar strings, for concert A and C */
