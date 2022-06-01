@@ -69,6 +69,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
         System.out.println();
     }
+
     @Override
     public T removeFirst() {
         if (isEmpty()) {
