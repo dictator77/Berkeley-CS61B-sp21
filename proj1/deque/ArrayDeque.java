@@ -1,6 +1,6 @@
 package deque;
 
-public class ArrayDeque<T> {
+public class ArrayDeque<T> implements Deque<T> {
     private int size;
     private int front;
     private int back;
@@ -95,11 +95,11 @@ public class ArrayDeque<T> {
         }
         return items[(front + 1 + index) % capacity];
     }
-    /*
-    public Iterator<T> iterator() {
 
-    }
-    */
+//    public Iterator<T> iterator() {
+//        return null;
+//    }
+
     @Override
     public boolean equals(Object o) {
         if (o instanceof ArrayDeque) {

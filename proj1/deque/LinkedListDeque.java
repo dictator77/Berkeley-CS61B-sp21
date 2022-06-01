@@ -1,6 +1,6 @@
 package deque;
 
-public class LinkedListDeque<T> {
+public class LinkedListDeque<T> implements Deque<T> {
     private int size;
     StuffNode sentinel;
 
@@ -103,11 +103,11 @@ public class LinkedListDeque<T> {
         }
         return p.item;
     }
-    /*
-    public Iterator<T> iterator() {
 
-    }
-    */
+//    public Iterator<T> iterator() {
+//
+//    }
+
     @Override
     public boolean equals(Object o) {
         if (o instanceof LinkedListDeque) {
