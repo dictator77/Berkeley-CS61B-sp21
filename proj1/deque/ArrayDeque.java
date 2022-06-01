@@ -64,6 +64,9 @@ public class ArrayDeque<T> implements Deque<T> {
     }
     @Override
     public T removeFirst() {
+        if (isEmpty()) {
+            return null;
+        }
         front = (front + 1) % capacity;
         size = size - 1;
         T temp = items[front];
@@ -74,6 +77,9 @@ public class ArrayDeque<T> implements Deque<T> {
     }
     @Override
     public T removeLast() {
+        if (isEmpty()) {
+            return null;
+        }
         back = (back + capacity - 1) % capacity;
         size = size - 1;
         T temp = items[back];

@@ -2,14 +2,14 @@ package deque;
 
 public class LinkedListDeque<T> implements Deque<T> {
     private int size;
-    stuffNode sentinel;
+    StuffNode sentinel;
 
-    private class stuffNode {
+    private class StuffNode {
         T item;
-        stuffNode prev;
-        stuffNode next;
+        StuffNode prev;
+        StuffNode next;
 
-        public stuffNode(T i, stuffNode p, stuffNode n) {
+        StuffNode(T i, StuffNode p, StuffNode n) {
             item = i;
             prev = p;
             next = n;
@@ -24,7 +24,7 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
 
     public LinkedListDeque() {
-        sentinel = new stuffNode(null, null, null);
+        sentinel = new StuffNode(null, null, null);
         sentinel.prev = sentinel;
         sentinel.next = sentinel;
         size = 0;
@@ -34,21 +34,21 @@ public class LinkedListDeque<T> implements Deque<T> {
         if (size() <= index) {
             return null;
         }
-        stuffNode temp = sentinel.next;
+        StuffNode temp = sentinel.next;
         return temp.getR(index);
     }
 
     @Override
     public void addFirst(T item) {
-        stuffNode p = sentinel.next;
-        sentinel.next = new stuffNode(item, sentinel, p);
+        StuffNode p = sentinel.next;
+        sentinel.next = new StuffNode(item, sentinel, p);
         p.prev = sentinel.next;
         size += 1;
     }
     @Override
     public void addLast(T item) {
-        stuffNode p = sentinel.prev;
-        sentinel.prev = new stuffNode(item, p, sentinel);
+        StuffNode p = sentinel.prev;
+        sentinel.prev = new StuffNode(item, p, sentinel);
         p.next = sentinel.prev;
         size += 1;
     }
@@ -59,7 +59,7 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
     @Override
     public void printDeque() {
-        stuffNode p = sentinel.next;
+        StuffNode p = sentinel.next;
         while (p != sentinel) {
             System.out.print(p.item);
             if (p.next != sentinel) {
@@ -74,7 +74,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         if (isEmpty()) {
             return null;
         }
-        stuffNode p = sentinel.next;
+        StuffNode p = sentinel.next;
         sentinel.next = p.next;
         p.next.prev = sentinel;
         size -= 1;
@@ -85,7 +85,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         if (isEmpty()) {
             return null;
         }
-        stuffNode p = sentinel.prev;
+        StuffNode p = sentinel.prev;
         sentinel.prev = p.prev;
         p.prev.next = sentinel;
         size -= 1;
@@ -96,7 +96,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         if (size() <= index) {
             return null;
         }
-        stuffNode p = sentinel.next;
+        StuffNode p = sentinel.next;
         while (index > 0) {
             p = p.next;
             index -= 1;
@@ -114,8 +114,8 @@ public class LinkedListDeque<T> implements Deque<T> {
             if (size() != ((LinkedListDeque<T>) o).size()) {
                 return false;
             }
-            stuffNode p = this.sentinel.next;
-            stuffNode q = ((LinkedListDeque<T>) o).sentinel.next;
+            StuffNode p = this.sentinel.next;
+            StuffNode q = ((LinkedListDeque<T>) o).sentinel.next;
             while (p != sentinel) {
                 if (p.item != q.item) {
                     return false;
