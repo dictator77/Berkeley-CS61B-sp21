@@ -1,6 +1,6 @@
 package deque;
 
-public class LinkedListDeque<T> implements Deque<T> {
+public class LinkedListDeque<T> {
     private int size;
     StuffNode sentinel;
 
