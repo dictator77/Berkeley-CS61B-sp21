@@ -4,15 +4,15 @@ import deque.ArrayDeque;
 import edu.princeton.cs.algs4.StdAudio;
 import edu.princeton.cs.algs4.StdDraw;
 
-public class GuitarHero {
+public class HarpHero {
     public static final double CONCERT_A = 440.0;
     private static String keyboard = "q2we4r5ty7u8i9op-[=zxdcfvgbnjmk,.;/' ";
 
     public static void main(String[] args) {
 
-        ArrayDeque<GuitarString> ad = new ArrayDeque<>();
+        ArrayDeque<Harp> ad = new ArrayDeque<>();
         for (int i = 0; i < keyboard.length(); i++) {
-            ad.addLast(new GuitarString(CONCERT_A * Math.pow(2, (i - 24) * 1.0 / 12)));
+            ad.addLast(new Harp(CONCERT_A * Math.pow(2, (i - 24) * 1.0 / 12)));
         }
 
         while (true) {

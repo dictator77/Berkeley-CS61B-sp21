@@ -3,8 +3,8 @@ package gh2;
 import deque.ArrayDeque;
 import deque.Deque;
 
-//Note: This file will not compile until you complete the Deque implementations
-public class GuitarString {
+public class Harp {
+
     /** Constants. Do not change. In case you're curious, the keyword final
      * means the values cannot be changed at runtime. We'll discuss this and
      * other topics in lecture on Friday. */
@@ -15,7 +15,7 @@ public class GuitarString {
     private ArrayDeque<Double> buffer;
 
     /* Create a guitar string of the given frequency.  */
-    public GuitarString(double frequency) {
+    public Harp(double frequency) {
         buffer = new ArrayDeque<>();
         int capacity = (int) Math.round(SR / frequency);
         for (int i = 0; i < capacity; i++) {
@@ -38,7 +38,7 @@ public class GuitarString {
      */
     public void tic() {
         double temp = buffer.removeFirst();
-        buffer.addLast(0.996 * (temp + buffer.get(0)) / 2);
+        buffer.addLast(- (0.996 * (temp + buffer.get(0)) / 2));
     }
 
     /* Return the double at the front of the buffer. */
