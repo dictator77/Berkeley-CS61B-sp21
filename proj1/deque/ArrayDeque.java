@@ -1,5 +1,7 @@
 package deque;
 
+import java.util.Iterator;
+
 public class ArrayDeque<T> implements Deque<T> {
     private int size;
     private int front;
@@ -96,24 +98,24 @@ public class ArrayDeque<T> implements Deque<T> {
         return items[(front + 1 + index) % capacity];
     }
 
-//    public Iterator<T> iterator() {
-//        return null;
-//    }
+    public Iterator<T> iterator() {
+        return null;
+    }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (o instanceof ArrayDeque) {
-//            if (size() != ((ArrayDeque<T>) o).size()) {
-//                return false;
-//            }
-//            for (int i = 0; i < size; i++) {
-//                if (((ArrayDeque<?>) o).get(i) != get(i)) {
-//                    return false;
-//                }
-//            }
-//            return true;
-//        }
-//        return false;
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof ArrayDeque) {
+            if (size() != ((ArrayDeque<T>) o).size()) {
+                return false;
+            }
+            for (int i = 0; i < size; i++) {
+                if (((ArrayDeque<?>) o).get(i) != get(i)) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return false;
+    }
 
 }
