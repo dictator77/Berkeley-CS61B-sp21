@@ -23,7 +23,7 @@ public class HarpHero {
                 if (keyboard.indexOf(key) != -1) {
                     int index = keyboard.indexOf(key);
                     ad.get(index).pluck();
-                }else {
+                } else {
                     continue;
                 }
             }

@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class LinkedListDeque<T> implements Deque<T> {
     private int size;
-    StuffNode sentinel;
+    private StuffNode sentinel;
 
     private class StuffNode {
         T item;
@@ -106,7 +106,7 @@ public class LinkedListDeque<T> implements Deque<T> {
         }
         return p.item;
     }
-
+    @Override
     public Iterator<T> iterator() {
         return null;
     }

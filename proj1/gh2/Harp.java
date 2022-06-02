@@ -39,7 +39,7 @@ public class Harp {
      */
     public void tic() {
         double temp = buffer.removeFirst();
-        buffer.addLast(- (0.996 * (temp + buffer.get(0)) / 2));
+        buffer.addLast(-(0.996 * (temp + buffer.get(0)) / 2));
     }
 
     /* Return the double at the front of the buffer. */
