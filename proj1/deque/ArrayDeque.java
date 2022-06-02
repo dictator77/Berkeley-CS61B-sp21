@@ -97,7 +97,7 @@ public class ArrayDeque<T> implements Deque<T> {
         }
         return items[(front + 1 + index) % capacity];
     }
-    @Override
+    
     public Iterator<T> iterator() {
         return null;
     }
