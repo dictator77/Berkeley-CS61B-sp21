@@ -97,9 +97,28 @@ public class ArrayDeque<T> implements Deque<T> {
         }
         return items[(front + 1 + index) % capacity];
     }
-    
+
     public Iterator<T> iterator() {
-        return null;
+        return new ArrayDequeIterator();
+    }
+
+    private class ArrayDequeIterator implements Iterator<T> {
+        int wizPos;
+
+        ArrayDequeIterator() {
+            wizPos = 0;
+        }
+        @Override
+        public boolean hasNext() {
+            return wizPos < size;
+        }
+
+        @Override
+        public T next() {
+            T returnItem = items[wizPos];
+            wizPos += 1;
+            return returnItem;
+        }
     }
 
     @Override
@@ -109,7 +128,7 @@ public class ArrayDeque<T> implements Deque<T> {
                 return false;
             }
             for (int i = 0; i < size; i++) {
-                if (((ArrayDeque<?>) o).get(i) != get(i)) {
+                if (!(((ArrayDeque<?>) o).get(i).equals(get(i)))) {
                     return false;
                 }
             }

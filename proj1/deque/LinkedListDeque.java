@@ -108,7 +108,25 @@ public class LinkedListDeque<T> implements Deque<T> {
     }
 
     public Iterator<T> iterator() {
-        return null;
+        return new LinkedListDequeIterator();
+    }
+
+    private class LinkedListDequeIterator implements Iterator<T> {
+        int wizPos;
+        LinkedListDequeIterator() {
+            wizPos = 0;
+        }
+        @Override
+        public boolean hasNext() {
+            return wizPos < size;
+        }
+
+        @Override
+        public T next() {
+            T returnItem = get(wizPos);
+            wizPos += 1;
+            return returnItem;
+        }
     }
 
     @Override
@@ -120,7 +138,7 @@ public class LinkedListDeque<T> implements Deque<T> {
             StuffNode p = this.sentinel.next;
             StuffNode q = ((LinkedListDeque<T>) o).sentinel.next;
             while (p != sentinel) {
-                if (p.item != q.item) {
+                if (!(p.item.equals(q.item))) {
                     return false;
                 }
                 p = p.next;
